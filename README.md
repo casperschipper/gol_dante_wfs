@@ -1,6 +1,12 @@
 # gol_dante_wfs
 This is just a repo to store notes about creating a linux machine for our Dante enabled WFS system.
 
+# Marian Driver for linux:
+
+https://github.com/MARIAN-Digital-Audio-Electronics/MARIAN-ALSA-DRIVER
+
+After following instructions, I saw an error that VMLINUX cannot be found, but the card works despite this error/warning.
+
 # Extending jackd driver port limit:
 
 In the initial attempt I came acros a limit built into Jack Audio Connect Kit.
