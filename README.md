@@ -55,8 +55,10 @@ You'll want to have as many servers as cores in the CPU.
 There seems to be a problem with buffer size of UDP messages in linux.
 However, this buffer can be enlarged with the following command.
 
+```bash
 sudo sysctl -w net.core.rmem_max=13631488
 sudo sysctl -w net.core.rmem_default=13631488
+```
 
 It also has the nice sideeffect of fixing the IDLE CPU rate to something more sensible. 
 
