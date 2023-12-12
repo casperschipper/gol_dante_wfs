@@ -7,6 +7,12 @@ This is just a repo to store notes about creating a linux machine for our Dante 
 
 After following instructions, I saw an error that vmlinus cannot be found, but the card works despite this error/warning.
 
+jackd start
+
+```bash
+jackd -R -p4096 -dalsa -r48000
+``` 
+
 # Extending jackd driver port limit:
 
 In the initial attempt I came acros a limit built into Jack Audio Connect Kit.
