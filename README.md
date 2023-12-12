@@ -5,7 +5,7 @@ This is just a repo to store notes about creating a linux machine for our Dante 
 
 https://github.com/MARIAN-Digital-Audio-Electronics/MARIAN-ALSA-DRIVER
 
-After following instructions, I saw an error that VMLINUX cannot be found, but the card works despite this error/warning.
+After following instructions, I saw an error that vmlinus cannot be found, but the card works despite this error/warning.
 
 # Extending jackd driver port limit:
 
