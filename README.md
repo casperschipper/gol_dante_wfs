@@ -3,7 +3,7 @@ This is just a repo to store notes about creating a linux machine for our Dante 
 
 # Marian Driver for linux:
 
-https://github.com/MARIAN-Digital-Audio-Electronics/MARIAN-ALSA-DRIVER
+<https://github.com/MARIAN-Digital-Audio-Electronics/MARIAN-ALSA-DRIVER>
 
 After following instructions, I saw an error that vmlinus cannot be found, but the card works despite this error/warning.
 
@@ -13,21 +13,36 @@ In the initial attempt I came acros a limit built into Jack Audio Connect Kit.
 There is a limit in jackd, called #define DRIVER_PORT_NUM, which by default is 256. This will not work with Marian Clara E, since it has many more ports.
 
 To change this limit:
-Download jack2 source from github.
-Change the number 256 to 1024
-remove any existing jack2 packages that are already there (also jack1, which is included with debian). I just did the rather aggresive:
+* Download jack2 source from github.
+* Change the number 256 to 1024
+* remove any existing jack2 packages that are already there (also jack1, which is included with debian). I just did the rather aggresive:
 
+```bash
 sudo apt remove jack*
+```
 
-Which is very aggressive, I don't recommend this, but it worked for me.
+Which is probably not very safe thing to do, I don't recommend this, but it worked for me.
 
 Compile jack2 by going to the jack root folder and running:
+
+```bash
 ./waf configure
 ./waf
 sudo ./waf install
+```
 
 You may need to install a dependency to also have the ALSA driver for Jack included otherwise you will see an error when you start jackd.
 You can check the build config options by doing ./waf --help
+
+After this, you can install supercollider package as normal, it has jackd as a dependency (also qjackctl), but this doesn't override the custom jackd client in 
+__/usr/local/bin__ so it seems to be ok.
+
+The WFS library can be installed as a quark and works out of the box.
+
+# WFS Settings
+
+Remove master server and only use WFS servers.
+You'll want to have as many servers as cores in the CPU.
 
 # UDP memory limit change.
 
