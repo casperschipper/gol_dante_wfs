@@ -62,3 +62,12 @@ sudo sysctl -w net.core.rmem_default=13631488
 
 It also has the nice sideeffect of fixing the IDLE CPU rate to something more sensible. 
 
+
+# Tracking CPU usage
+
+top -n 1 -H -p 
+
+this will show actual CPU usage by all jackd threads
+top -H -p $(pgrep jackd)
+
+taskset -apc 0-23 $(pgrep jackd)
